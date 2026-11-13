@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!-- viewport tag: makes the page fit phone screens -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Expenses &amp; Budget - FinSlayy</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<!-- SCREEN 2 : EXPENSES and BUDGET -->
+
+<div class="layout">
+
+  <!-- ================= SIDEBAR ================= -->
+  <aside class="sidebar">
+    <img class="logo" src="images/logo.png" alt="FinSlayy logo">
+    <p class="tagline">Make your money slay!</p>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="expenses.html" class="active">Expenses</a></li>
+        <li><a href="goals.html">Goals &amp; Investment</a></li>
+        <li><a href="chat.html">AI Chat</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <div class="main">
+
+    <!-- ================= B. TOP BAR ================= -->
+    <header class="topbar">
+      <form class="top-input" action="chat.html" method="get">
+        <label for="search" class="visually-hidden">Search or ask FinSlayy</label>
+        <input type="search" id="search" name="q" placeholder="Search or ask FinSlayy...">
+      </form>
+
+      <div class="topbar-right">
+        <a href="#bills" class="bell" title="Notifications">🔔</a>
+        <img class="avatar" src="images/avatar.png" alt="Your profile picture" width="40" height="40">
+      </div>
+    </header>
+
+    <main>
+
+      <!-- ================= HEADING + TABS ================= -->
+      <div class="page-heading">
+        <h1>Expenses &amp; Budget</h1>
+        <p>Track where your money goes this month.</p>
+      </div>
+
+      
+
+      <!-- ================= OVERVIEW ================= -->
+      <section id="overview">
+        <div class="row">
+
+          <!-- Monthly spending -->
+          <article class="card col-narrow">
+            <h2>Monthly Spending</h2>
+            <p class="budget-amount">Rs. 91,500 <span class="muted">/ Rs. 150,000</span></p>
+
+            <div class="bar">
+              <div class="bar-fill fill-61"></div>
+            </div>
+            <p class="muted">61% of your income spent</p>
+            <p class="budget-note good">You're within your budget!</p>
+          </article>
+
+          <!-- Spending by category -->
+          <article class="card col-wide">
+            <h2>Spending by Category</h2>
+            <div class="chart-box">
+              <figure>
+                <img src="images/spending.png" alt="Donut chart: 55% needs, 33% wants, 12% future self" width="260" height="260">
+                <figcaption>Rs. 91,500 spent</figcaption>
+              </figure>
+
+              <ul class="legend">
+                <li><span><span class="dot dot-needs"></span>Needs</span> <span>55%</span></li>
+                <li><span><span class="dot dot-wants"></span>Wants</span> <span>33%</span></li>
+                <li><span><span class="dot dot-future"></span>Future Self</span> <span>12%</span></li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ================= TRANSACTIONS ================= -->
+      <section id="transactions" class="card spaced">
+        <h2>Recent Transactions</h2>
+
+        <table>
+          <caption>Your latest expenses this month</caption>
+          <thead>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">Description</th>
+              <th scope="col">Category</th>
+              <th scope="col" class="amount">Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>17 Oct</td>
+              <td>Amazon</td>
+              <td>Shopping <span class="tag tag-wants">Wants</span></td>
+              <td class="amount">Rs. 7,500</td>
+            </tr>
+            <tr>
+              <td>15 Oct</td>
+              <td>Utility Bill</td>
+              <td>Bills <span class="tag tag-needs">Needs</span></td>
+              <td class="amount">Rs. 4,200</td>
+            </tr>
+            <tr>
+              <td>13 Oct</td>
+              <td>Grocery Store</td>
+              <td>Food <span class="tag tag-needs">Needs</span></td>
+              <td class="amount">Rs. 6,800</td>
+            </tr>
+            <tr>
+              <td>11 Oct</td>
+              <td>Restaurant</td>
+              <td>Dining <span class="tag tag-wants">Wants</span></td>
+              <td class="amount">Rs. 3,500</td>
+            </tr>
+            <tr>
+              <td>8 Oct</td>
+              <td>Laptop fund transfer</td>
+              <td>Savings <span class="tag tag-future">Future Self</span></td>
+              <td class="amount">Rs. 10,000</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Add expense form -->
+      <section class="card spaced">
+        <form action="expenses.html" method="get">
+          <fieldset>
+            <legend>Add a new expense</legend>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="expense-desc">Description</label>
+                <input type="text" id="expense-desc" name="description" placeholder="e.g. Grocery Store" required>
+              </div>
+
+              <div class="form-field">
+                <label for="expense-amount">Amount (Rs.)</label>
+                <input type="number" id="expense-amount" name="amount" min="1" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="expense-category">Category</label>
+                <select id="expense-category" name="category">
+                  <option value="needs">Needs</option>
+                  <option value="wants">Wants</option>
+                  <option value="future">Future Self</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label for="expense-date">Date</label>
+                <input type="date" id="expense-date" name="date" required>
+              </div>
+            </div>
+
+            <button type="submit" class="btn">Add expense</button>
+          </fieldset>
+        </form>
+      </section>
+
+      <!-- =================CATEGORIES ================= -->
+      <section id="categories">
+        <h2>Categories</h2>
+        <div class="row">
+
+          <article class="card category-card category-needs">
+            <h3>Needs</h3>
+            <p class="big-number">Rs. 50,000</p>
+            <p class="muted">of Rs. 75,000 budget</p>
+            <div class="bar"><div class="bar-fill fill-67"></div></div>
+            <p class="muted">67% used</p>
+          </article>
+
+          <article class="card category-card category-wants">
+            <h3>Wants</h3>
+            <p class="big-number">Rs. 30,500</p>
+            <p class="muted">of Rs. 45,000 budget</p>
+            <div class="bar"><div class="bar-fill fill-68"></div></div>
+            <p class="muted">68% used</p>
+          </article>
+
+          <article class="card category-card category-future">
+            <h3>Future Self</h3>
+            <p class="big-number">Rs. 11,000</p>
+            <p class="muted">of Rs. 30,000 target</p>
+            <div class="bar"><div class="bar-fill fill-37"></div></div>
+            <p class="muted">37% reached - try to add more here</p>
+          </article>
+        </div>
+      </section>
+
+      
+      
+
+    </main>
+
+  </div> <!-- end .main -->
+</div> <!-- end .layout -->
+
+</body>
+</html>

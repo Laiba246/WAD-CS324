@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!-- viewport tag: makes the page fit phone screens -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Goals &amp; Investment - FinSlayy</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<!--SCREEN 3 : GOALS & INVESTMENT -->
+
+<div class="layout">
+
+  <!-- ================= SIDEBAR ================= -->
+  <aside class="sidebar">
+    <img class="logo" src="images/logo.png" alt="FinSlayy logo">
+    <p class="tagline">Make your money slay!</p>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="expenses.html">Expenses</a></li>
+        <li><a href="goals.html" class="active">Goals &amp; Investment</a></li>
+        <li><a href="chat.html">AI Chat</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <div class="main">
+
+    <!-- ================= TOP BAR ================= -->
+    <header class="topbar">
+      <form class="top-input" action="chat.html" method="get">
+        <label for="search" class="visually-hidden">Search or ask FinSlayy</label>
+        <input type="search" id="search" name="q" placeholder="Search or ask FinSlayy...">
+      </form>
+
+      <div class="topbar-right">
+        <a href="expenses.html#bills" class="bell" title="Notifications">🔔</a>
+        <img class="avatar" src="images/avatar.png" alt="Your profile picture" width="40" height="40">
+      </div>
+    </header>
+
+    <main>
+
+      <!-- ================= HEADING + BUTTON =================
+           the button is a link that jumps down to the form (id="add-goal") -->
+      <div class="heading-with-button">
+        <div>
+          <h1>Your Financial Goals</h1>
+          <p class="muted">Set a target, and FinSlayy AI tells you how to reach it.</p>
+        </div>
+        <a href="#add-goal" class="btn">Add New Goal</a>
+      </div>
+
+      <!-- ================= GOAL BOXES ================= -->
+      <section class="row">
+
+        <article class="card goal-card">
+          <h2>Washing Machine</h2>
+          <p class="goal-amount">Rs. 72,000 / Rs. 120,000</p>
+          <div class="bar"><div class="bar-fill fill-60"></div></div>
+          <p class="goal-percent">60% saved</p>
+          <p class="goal-meta">Target date: 31 Dec 2026</p>
+          <p class="goal-meta">Save about Rs. 19,000 / month</p>
+        </article>
+
+        <article class="card goal-card">
+          <h2>Laptop</h2>
+          <p class="goal-amount">Rs. 40,000 / Rs. 100,000</p>
+          <div class="bar"><div class="bar-fill fill-40"></div></div>
+          <p class="goal-percent">40% saved</p>
+          <p class="goal-meta">Target date: 15 Feb 2027</p>
+          <p class="goal-meta">Save about Rs. 15,000 / month</p>
+        </article>
+
+        <article class="card goal-card">
+          <h2>Vacation</h2>
+          <p class="goal-amount">Rs. 25,000 / Rs. 150,000</p>
+          <div class="bar"><div class="bar-fill fill-17"></div></div>
+          <p class="goal-percent">17% saved</p>
+          <p class="goal-meta">Target date: 30 Jun 2027</p>
+          <p class="goal-meta">Save about Rs. 15,000 / month</p>
+        </article>
+      </section>
+
+      
+
+      <!-- ================= INVESTMENT ================= -->
+      <div class="row">
+
+        <!-- F1. Recommended investment plan -->
+        <section class="card col-wide">
+          <h2>Recommended Investment Plan</h2>
+          <p class="muted">Based on your goals and your risk preference (low to medium), we suggest:</p>
+          <ul class="plan-list">
+            <li>Emergency fund: 3-6 months of expenses</li>
+            <li>Conservative investment: 40%</li>
+            <li>Balanced investment: 40%</li>
+            <li>Growth investment: 20%</li>
+          </ul>
+          <a class="btn btn-outline" href="chat.html">View details</a>
+        </section>
+
+        <!-- Investment overview -->
+        <section class="card col-narrow">
+          <h2>Investment Overview</h2>
+          <p class="muted">Total invested</p>
+          <p class="invested-total">Rs. 45,000</p>
+
+          <table>
+            <caption>Where your money is invested</caption>
+            <thead>
+              <tr>
+                <th scope="col">Type</th>
+                <th scope="col">Risk</th>
+                <th scope="col" class="amount">Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Emergency fund</td>
+                <td>Low</td>
+                <td class="amount">Rs. 20,000</td>
+              </tr>
+              <tr>
+                <td>Conservative</td>
+                <td>Low</td>
+                <td class="amount">Rs. 15,000</td>
+              </tr>
+              <tr>
+                <td>Balanced</td>
+                <td>Medium</td>
+                <td class="amount">Rs. 10,000</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </div>
+
+      <!-- ================= ADD GOAL FORM ================= -->
+      <section id="add-goal" class="card">
+        <form action="goals.html" method="get">
+          <fieldset>
+            <legend>Add a new goal</legend>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="goal-name">Goal name</label>
+                <input type="text" id="goal-name" name="goal" placeholder="e.g. University fees" required>
+              </div>
+
+              <div class="form-field">
+                <label for="goal-amount">Target amount (Rs.)</label>
+                <input type="number" id="goal-amount" name="amount" min="1" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="goal-date">Target date</label>
+                <input type="date" id="goal-date" name="date" required>
+              </div>
+
+              <div class="form-field">
+                <label for="goal-risk">Risk preference</label>
+                <select id="goal-risk" name="risk">
+                  <option value="low">Low</option>
+                  <option value="medium">Medium</option>
+                  <option value="high">High</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="submit" class="btn">Save goal</button>
+          </fieldset>
+        </form>
+      </section>
+
+    </main>
+
+  </div> <!-- end .main -->
+</div> <!-- end .layout -->
+
+</body>
+</html>
